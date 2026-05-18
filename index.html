@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Profil - SMP Islam Az-Zahro</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            deep: '#0F5132',
+                            medium: '#146c43',
+                            light: '#d1e7dd',
+                            soft: '#f0fdf4'
+                        },
+                        gold: {
+                            accent: '#D4AF37',
+                            muted: '#c5a059',
+                            light: '#fbf7eb'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif-custom {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass-nav {
+            background-color: rgba(15, 81, 50, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        /* Custom geometric pattern backgrounds */
+        .bg-islamic-pattern {
+            background-color: #0f5132;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 0),
+                              radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 0);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-emerald-deep selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-emerald-medium/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand/Logo Area -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-gold-accent to-emerald-medium flex items-center justify-center shadow-lg border border-gold-accent/40">
+                        <!-- Custom Islamic Geometric Logo Icon (SVG) -->
+                        <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block text-white font-serif-custom text-lg font-bold tracking-wide">SMP ISLAM AZ-ZAHRO</span>
+                        <span class="block text-gold-accent text-xs tracking-widest uppercase font-semibold">NPSN: 70024271</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-emerald-light hover:text-gold-accent font-medium transition-colors duration-200">Beranda</a>
+                    <a href="#legalitas" class="text-white/80 hover:text-gold-accent font-medium transition-colors duration-200">Profil & Legalitas</a>
+                    <a href="#visimisi" class="text-white/80 hover:text-gold-accent font-medium transition-colors duration-200">Visi & Misi</a>
+                    <a href="#pilar" class="text-white/80 hover:text-gold-accent font-medium transition-colors duration-200">Pilar Unggulan</a>
+                    <a href="#kontak" class="bg-gold-accent text-emerald-deep px-5 py-2.5 rounded-lg font-bold hover:bg-white hover:text-emerald-deep transition-all duration-300 shadow-md">Hubungi Kami</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-gold-accent focus:outline-none p-2" aria-label="Toggle Menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-emerald-deep border-t border-emerald-medium/40 transition-all duration-300">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
+                <a href="#beranda" class="block text-white py-3 px-4 hover:bg-emerald-medium rounded-lg">Beranda</a>
+                <a href="#legalitas" class="block text-white py-3 px-4 hover:bg-emerald-medium rounded-lg">Profil & Legalitas</a>
+                <a href="#visimisi" class="block text-white py-3 px-4 hover:bg-emerald-medium rounded-lg">Visi & Misi</a>
+                <a href="#pilar" class="block text-white py-3 px-4 hover:bg-emerald-medium rounded-lg">Pilar Unggulan</a>
+                <a href="#kontak" class="block bg-gold-accent text-emerald-deep mx-4 py-3 px-4 rounded-lg font-bold shadow-md">Hubungi Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="beranda" class="relative pt-32 pb-24 md:pt-48 md:pb-40 bg-islamic-pattern overflow-hidden">
+        <!-- Overlay Soft Radial Gradient for Premium Lighting -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-deep/60 to-emerald-deep z-0"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center space-x-2 bg-emerald-medium/50 border border-gold-accent/40 px-4 py-2 rounded-full mb-6 animate-pulse">
+                <span class="w-2.5 h-2.5 rounded-full bg-gold-accent"></span>
+                <span class="text-gold-accent text-xs font-semibold tracking-wider uppercase">Penerimaan Siswa Baru Operasional Resmi</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif-custom text-white font-bold leading-tight max-w-5xl mx-auto">
+                Membentuk Generasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-accent to-yellow-200">Rabbani</span> Yang Unggul & Berakhlak Mulia
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="mt-6 text-emerald-light text-base sm:text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
+                Selamat Datang di <strong class="text-white font-semibold">SMP Islam Az-Zahro</strong>. Lembaga pendidikan terpercaya yang mengintegrasikan kecerdasan intelektual, kedalaman spritual, dan kemuliaan akhlak.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#legalitas" class="w-full sm:w-auto px-8 py-4 bg-gold-accent hover:bg-yellow-400 text-emerald-deep font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-xl flex items-center justify-center gap-2">
+                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                    Lihat Dokumen Profil
+                </a>
+                <a href="#visimisi" class="w-full sm:w-auto px-8 py-4 bg-emerald-medium/40 hover:bg-emerald-medium/60 border border-white/20 text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm flex items-center justify-center gap-2">
+                    <i data-lucide="compass" class="w-5 h-5"></i>
+                    Pelajari Visi & Misi
+                </a>
+            </div>
+
+            <!-- Stats/Highlights Grid -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="bg-white/5 border border-white/10 p-5 rounded-2xl backdrop-blur-sm">
+                    <span class="block text-3xl font-bold text-gold-accent">2023</span>
+                    <span class="text-xs text-emerald-light uppercase tracking-wider font-medium">Berdiri Sejak</span>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-5 rounded-2xl backdrop-blur-sm">
+                    <span class="block text-3xl font-bold text-gold-accent">Swasta</span>
+                    <span class="text-xs text-emerald-light uppercase tracking-wider font-medium">Status Lembaga</span>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-5 rounded-2xl backdrop-blur-sm">
+                    <span class="block text-3xl font-bold text-gold-accent">Yayasan</span>
+                    <span class="text-xs text-emerald-light uppercase tracking-wider font-medium">Kepemilikan</span>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-5 rounded-2xl backdrop-blur-sm">
+                    <span class="block text-3xl font-bold text-gold-accent">Resmi</span>
+                    <span class="text-xs text-emerald-light uppercase tracking-wider font-medium">Izin Kemendikbud</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Separator Shape -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-[60px]" data-name="Layer 1" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,88.43,26.85,152.42,44.29,223.11,58.3,321.39,56.44Z" fill="#f9fafb"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- LEGALITAS & IDENTITAS SECTION -->
+    <section id="legalitas" class="py-20 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-light/50 px-3 py-1.5 rounded-md">Transparansi Data</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-serif-custom font-bold text-gray-900">Identitas Resmi Satuan Pendidikan</h2>
+                <div class="w-16 h-1 bg-gold-accent mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-gray-600">SMP Islam Az-Zahro dikelola secara profesional di bawah naungan yayasan dengan legalitas hukum lengkap dan terdaftar resmi di Kementerian Pendidikan dan Kebudayaan.</p>
+            </div>
+
+            <!-- Two Columns Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Column 1: Metadata Cards (8 columns on large screen) -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-4 hover:shadow-md transition-shadow duration-300">
+                        <div class="p-3 rounded-xl bg-emerald-soft text-emerald-deep">
+                            <i data-lucide="info" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Nama Lembaga</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-0.5">SMP Islam Az-Zahro</h3>
+                            <p class="text-sm text-gray-500">Menyelenggarakan Pendidikan Tingkat Sekolah Menengah Pertama (SMP)</p>
+                        </div>
+                        <span class="px-3 py-1 bg-emerald-light/60 text-emerald-deep text-xs font-bold rounded-full">Swasta</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400 block">NPSN</span>
+                            <span class="text-2xl font-mono font-bold text-emerald-deep block mt-1">70024271</span>
+                            <span class="text-xs text-gray-500 mt-2 block flex items-center gap-1">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-medium"></i> Terverifikasi Pusdatin Kemendikbud
+                            </span>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400 block">Kepemilikan</span>
+                            <span class="text-2xl font-bold text-gray-900 block mt-1">Yayasan</span>
+                            <span class="text-xs text-gray-500 mt-2 block flex items-center gap-1">
+                                <i data-lucide="shield" class="w-4 h-4 text-gold-muted"></i> Berbadan Hukum Resmi
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- SK SK Section -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
+                        <h4 class="text-md font-bold text-gray-800 border-b pb-3 flex items-center gap-2">
+                            <i data-lucide="award" class="text-gold-accent w-5 h-5"></i> Ketetapan & Legalitas Operasional
+                        </h4>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- SK Pendirian -->
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-emerald-deep bg-emerald-soft px-2.5 py-1 rounded">SK Pendirian Sekolah</span>
+                                <p class="text-sm font-semibold text-gray-800 break-words mt-2">421.3/1343/430.9.9/2023</p>
+                                <div class="flex items-center gap-2 text-xs text-gray-500">
+                                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                                    <span>Tertanggal: 18 Desember 2023</span>
+                                </div>
+                            </div>
+                            
+                            <!-- SK Izin Operasional -->
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-gold-muted bg-gold-light px-2.5 py-1 rounded">SK Izin Operasional</span>
+                                <p class="text-sm font-semibold text-gray-800 break-words mt-2">503.421/649/PENDIK/430.9.13/2023</p>
+                                <div class="flex items-center gap-2 text-xs text-gray-500">
+                                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                                    <span>Tertanggal: 21 Desember 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Legal Certificate Feature Visual Display (5 columns) -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-emerald-deep to-emerald-medium p-8 rounded-3xl text-white flex flex-col justify-between shadow-xl relative overflow-hidden">
+                    <!-- Geometric Accent inside -->
+                    <div class="absolute -right-16 -top-16 w-48 h-48 rounded-full bg-white/5 border border-white/10 pointer-events-none"></div>
+                    <div class="absolute -left-16 -bottom-16 w-64 h-64 rounded-full bg-gold-accent/5 pointer-events-none"></div>
+
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-xl bg-gold-accent flex items-center justify-center text-emerald-deep mb-6 shadow-md">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif-custom font-bold text-white mb-4">Lembaga Terakreditasi Hukum</h3>
+                        <p class="text-emerald-light text-sm leading-relaxed mb-6">
+                            Setiap dokumen operasional SMP Islam Az-Zahro telah melalui proses verifikasi dinas pendidikan setempat dan kementerian terkait. Hal ini menjamin status kelulusan siswa, hak mengikuti ujian nasional, serta keabsahan ijazah yang diterbitkan.
+                        </p>
+                        
+                        <!-- List of assurances -->
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-sm text-emerald-soft">
+                                <span class="w-5 h-5 rounded-full bg-emerald-medium flex items-center justify-center text-gold-accent text-xs">✔</span>
+                                Kurikulum Nasional Terintegrasi
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-emerald-soft">
+                                <span class="w-5 h-5 rounded-full bg-emerald-medium flex items-center justify-center text-gold-accent text-xs">✔</span>
+                                Terdaftar di Dapodik Aktif
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-emerald-soft">
+                                <span class="w-5 h-5 rounded-full bg-emerald-medium flex items-center justify-center text-gold-accent text-xs">✔</span>
+                                Hak Ujian Berbasis Komputer Mandiri
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-white/10 relative z-10">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs text-gold-accent font-bold">AZ</div>
+                            <div>
+                                <span class="block text-xs text-emerald-light">Direktur Yayasan Pendidikan</span>
+                                <span class="block text-sm font-semibold text-white">Az-Zahro Islamic Foundation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISI & MISI SECTION -->
+    <section id="visimisi" class="py-20 md:py-28 bg-white relative overflow-hidden">
+        <!-- Decoration geometric right -->
+        <div class="hidden lg:block absolute right-0 top-1/4 w-96 h-96 rounded-l-full bg-emerald-soft opacity-40 -z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header section -->
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-gold-accent font-semibold text-sm tracking-wider uppercase bg-gold-light px-3 py-1.5 rounded-md">Pilar Penuntun</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-serif-custom font-bold text-gray-900">Visi & Misi Lembaga</h2>
+                <div class="w-16 h-1 bg-emerald-deep mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Visi Highlight Frame -->
+            <div class="max-w-4xl mx-auto bg-gradient-to-r from-emerald-deep to-emerald-medium p-10 md:p-14 rounded-3xl text-center shadow-xl mb-16 relative">
+                <!-- Islamic decorative quotes element -->
+                <span class="absolute top-4 left-6 text-7xl font-serif text-white/10 pointer-events-none">“</span>
+                <span class="absolute bottom-4 right-6 text-7xl font-serif text-white/10 pointer-events-none">”</span>
+                
+                <h3 class="text-gold-accent font-bold text-xs uppercase tracking-widest mb-4">Visi Utama Kami</h3>
+                <blockquote class="text-xl md:text-2xl lg:text-3xl font-serif-custom italic text-white font-medium leading-relaxed">
+                    "Menjadi lembaga pendidikan Islam yang unggul dalam mencetak generasi penerus bangsa yang beriman, berilmu, dan berakhlakul karimah, serta siap menghadapi tantangan zaman."
+                </blockquote>
+            </div>
+
+            <!-- Misi 3-Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card Misi 1 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-emerald-deep/30 hover:bg-white hover:shadow-lg transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-emerald-deep text-white flex items-center justify-center mb-6 group-hover:bg-gold-accent group-hover:text-emerald-deep transition-all duration-300 shadow-md">
+                            <i data-lucide="book-open" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Peningkatan Iman dan Taqwa (Imtaq)</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Menjadikan nilai-nilai ajaran Islam sebagai landasan dasar dalam pembentukan kepribadian peserta didik sehari-hari.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200/60 flex items-center gap-2 text-xs font-semibold text-emerald-deep">
+                        <span>Fokus Pembiasaan Karakter</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- Card Misi 2 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-emerald-deep/30 hover:bg-white hover:shadow-lg transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-emerald-deep text-white flex items-center justify-center mb-6 group-hover:bg-gold-accent group-hover:text-emerald-deep transition-all duration-300 shadow-md">
+                            <i data-lucide="trending-up" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Pengembangan Akademik & Potensi Diri</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Melaksanakan proses pembelajaran yang efektif untuk menggali dan mengembangkan potensi, minat, serta bakat siswa secara optimal.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200/60 flex items-center gap-2 text-xs font-semibold text-emerald-deep">
+                        <span>Fokus Kurikulum & Ekstra</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- Card Misi 3 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-emerald-deep/30 hover:bg-white hover:shadow-lg transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-emerald-deep text-white flex items-center justify-center mb-6 group-hover:bg-gold-accent group-hover:text-emerald-deep transition-all duration-300 shadow-md">
+                            <i data-lucide="smile" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Pendidikan Karakter Mulia</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Membangun akhlak mulia, disiplin, dan budi pekerti luhur dalam kehidupan sehari-hari siswa di sekolah maupun di luar.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200/60 flex items-center gap-2 text-xs font-semibold text-emerald-deep">
+                        <span>Fokus Kedisiplinan & Akhlak</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE STUDY PATH EXPLORER (PILAR UNGGULAN) -->
+    <section id="pilar" class="py-20 md:py-28 bg-emerald-soft/50 border-t border-b border-emerald-light/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-light/60 px-3 py-1.5 rounded-md">Eksplorasi Kurikulum</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-serif-custom font-bold text-gray-900">Program Pembiasaan & Unggulan</h2>
+                <div class="w-16 h-1 bg-gold-accent mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-gray-600">Tekan tab di bawah ini untuk melihat bagaimana kami mengimplementasikan visi besar dalam program operasional harian sekolah.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="switchTab('imtaq')" id="btn-imtaq" class="tab-btn px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 bg-emerald-deep text-white shadow-md">
+                    Pilar 1: Keislaman (IMTAQ)
+                </button>
+                <button onclick="switchTab('akademik')" id="btn-akademik" class="tab-btn px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 bg-white text-gray-700 hover:bg-gray-100">
+                    Pilar 2: Akademik & Minat Bakat
+                </button>
+                <button onclick="switchTab('karakter')" id="btn-karakter" class="tab-btn px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 bg-white text-gray-700 hover:bg-gray-100">
+                    Pilar 3: Karakter & Adab
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div id="tab-content-container" class="bg-white p-8 md:p-12 rounded-3xl border border-gray-100 shadow-sm">
+                <!-- Tab Imtaq -->
+                <div id="content-imtaq" class="tab-content block space-y-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <h3 class="text-2xl font-serif-custom font-bold text-emerald-deep">Fondasi Kokoh Melalui Nilai Islam</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Di SMP Islam Az-Zahro, kami percaya bahwa kecerdasan intelektual harus dilandasi oleh spiritualitas yang mapan. Pembiasaan nilai-nilai agama dilakukan tidak hanya di dalam kelas, melainkan di setiap aktivitas sekolah.
+                            </p>
+                            <!-- Detailed sub-programs -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="p-1 rounded bg-gold-light text-gold-accent mt-1">
+                                        <i data-lucide="check" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-gray-800">Shalat Dhuha & Dzuhur Berjamaah</h4>
+                                        <p class="text-xs text-gray-500">Pembiasaan ibadah wajib & sunnah terjadwal secara berkala.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="p-1 rounded bg-gold-light text-gold-accent mt-1">
+                                        <i data-lucide="check" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-gray-800">Bimbingan Tahfidz Al-Qur'an</h4>
+                                        <p class="text-xs text-gray-500">Program hafalan Al-Qur'an terpadu dengan standar tajwid mumpuni.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 bg-emerald-soft p-6 rounded-2xl border border-emerald-light/50 text-center">
+                            <span class="text-xs font-bold text-emerald-deep uppercase tracking-widest block mb-2">Estimasi Target Kelulusan</span>
+                            <div class="text-5xl font-extrabold text-emerald-deep font-serif-custom my-4">2 Juz +</div>
+                            <p class="text-xs text-gray-600">Hafalan Al-Qur'an teruji dengan pemahaman dasar tajwid & adab Al-Qur'an.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Akademik -->
+                <div id="content-akademik" class="tab-content hidden space-y-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <h3 class="text-2xl font-serif-custom font-bold text-emerald-deep">Kurikulum Modern & Pengembangan Minat</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Kurikulum dikemas secara aktif dan inovatif untuk memicu rasa ingin tahu siswa. Kami memberikan bimbingan individual untuk menggali dan mengasah minat khusus anak di bidang riset, bahasa, teknologi, maupun seni islami.
+                            </p>
+                            <!-- Detailed sub-programs -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="p-1 rounded bg-gold-light text-gold-accent mt-1">
+                                        <i data-lucide="check" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-gray-800">Pembelajaran Kreatif Berbasis IT</h4>
+                                        <p class="text-xs text-gray-500">Optimalisasi platform belajar digital untuk materi yang adaptif.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="p-1 rounded bg-gold-light text-gold-accent mt-1">
+                                        <i data-lucide="check" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-gray-800">Ekstrakurikuler Pilihan</h4>
+                                        <p class="text-xs text-gray-500">Pramuka, pidato 3 bahasa, seni baca Al-Qur'an, dan olahraga.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 bg-gold-light p-6 rounded-2xl border border-gold-accent/20 text-center">
+                            <span class="text-xs font-bold text-gold-muted uppercase tracking-widest block mb-2">Rasio Guru & Siswa</span>
+                            <div class="text-5xl font-extrabold text-emerald-deep font-serif-custom my-4">1 : 15</div>
+                            <p class="text-xs text-gray-600">Pendampingan akademik yang intensif untuk memastikan keberhasilan siswa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Karakter -->
+                <div id="content-karakter" class="tab-content hidden space-y-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <h3 class="text-2xl font-serif-custom font-bold text-emerald-deep">Pendidikan Karakter & Kedisiplinan</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Membentuk karakter disiplin dan mandiri di era digital bukanlah hal mudah. Kami menerapkannya dengan sistem keteladanan harian terintegrasi, di mana nilai kesopanan, kesabaran, kerja sama, dan hormat kepada orang tua senantiasa dievaluasi secara berkala.
+                            </p>
+                            <!-- Detailed sub-programs -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="p-1 rounded bg-gold-light text-gold-accent mt-1">
+                                        <i data-lucide="check" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-gray-800">Penilaian Buku Karakter</h4>
+                                        <p class="text-xs text-gray-500">Buku penghubung antara orang tua dan guru dalam melacak adab siswa.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="p-1 rounded bg-gold-light text-gold-accent mt-1">
+                                        <i data-lucide="check" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-gray-800">Komunitas Ramah Anak</h4>
+                                        <p class="text-xs text-gray-500">Lingkungan bebas perundungan (bullying) dengan pengawasan ketat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 bg-emerald-deep p-6 rounded-2xl text-center text-white">
+                            <span class="text-xs font-bold text-gold-accent uppercase tracking-widest block mb-2">Nilai Inti Siswa</span>
+                            <div class="text-3xl font-bold font-serif-custom my-4">Berbudi Pekerti</div>
+                            <p class="text-xs text-emerald-light">Fokus melahirkan lulusan yang santun dan siap menghadapi arus globalisasi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & INQUIRY SECTION -->
+    <section id="kontak" class="py-20 md:py-28 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Contact Info Panel (5 Columns) -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-soft px-3 py-1 rounded">Hubungi Kami</span>
+                        <h2 class="mt-4 text-3xl font-serif-custom font-bold text-gray-900">Mari Berdiskusi Mengenai Masa Depan Anak Anda</h2>
+                        <p class="mt-4 text-gray-600">Pintu pendaftaran dan konsultasi kami selalu terbuka. Silakan menghubungi tim sekretariat kami untuk informasi lebih lanjut.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Card 1 -->
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
+                            <div class="w-12 h-12 rounded-lg bg-emerald-soft text-emerald-deep flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400 font-bold uppercase">Lokasi Kampus</span>
+                                <span class="block text-sm text-gray-800 font-semibold">Hubungi Cabang / Yayasan Setempat</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
+                            <div class="w-12 h-12 rounded-lg bg-emerald-soft text-emerald-deep flex items-center justify-center">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400 font-bold uppercase">Call Center Resmi</span>
+                                <span class="block text-sm text-gray-800 font-semibold">+62 812-3456-7890</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
+                            <div class="w-12 h-12 rounded-lg bg-emerald-soft text-emerald-deep flex items-center justify-center">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400 font-bold uppercase">E-mail Hubungan</span>
+                                <span class="block text-sm text-gray-800 font-semibold">info@smpislamazzahro.sch.id</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Contact Form (7 Columns) -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-gray-100 shadow-xl space-y-6">
+                    <h3 class="text-xl font-bold text-gray-900 border-b pb-4 flex items-center gap-2">
+                        <i data-lucide="mail-open" class="text-gold-accent w-6 h-6"></i> Kirim Pesan / Formulir Minat
+                    </h3>
+
+                    <!-- Alert message container -->
+                    <div id="contact-success-alert" class="hidden bg-emerald-soft border border-emerald-medium/30 p-4 rounded-xl text-emerald-deep text-sm flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 flex-shrink-0"></i>
+                        <span>Pesan berhasil dikirim! Tim Humas SMP Islam Az-Zahro akan menghubungi Anda segera.</span>
+                    </div>
+
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Nama Lengkap Orang Tua</label>
+                                <input type="text" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-emerald-deep focus:bg-white text-sm transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Nomor WhatsApp Aktif</label>
+                                <input type="tel" required placeholder="Contoh: 0812XXXXXXXX" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-emerald-deep focus:bg-white text-sm transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Nama Calon Siswa</label>
+                            <input type="text" placeholder="Masukkan nama calon peserta didik" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-emerald-deep focus:bg-white text-sm transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Pertanyaan / Pesan Anda</label>
+                            <textarea required rows="4" placeholder="Tulis rincian pesan atau pertanyaan Anda di sini..." class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-emerald-deep focus:bg-white text-sm transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-emerald-deep hover:bg-emerald-medium text-white font-bold rounded-xl transition-colors duration-200 shadow-md">
+                            Kirim Formulir Konsultasi
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-emerald-deep text-white border-t border-emerald-medium/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                
+                <!-- Footer Info (5 Columns) -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-lg bg-gold-accent flex items-center justify-center text-emerald-deep font-bold text-lg">
+                            AZ
+                        </div>
+                        <span class="text-lg font-serif-custom font-bold tracking-wide">SMP ISLAM AZ-ZAHRO</span>
+                    </div>
+                    <p class="text-xs text-emerald-light/80 leading-relaxed max-w-sm">
+                        Lembaga pendidikan tingkat dasar swasta berasaskan nilai Islam, akhlakul karimah, dan kesiapan teknologi masa kini.
+                    </p>
+                    <div class="flex space-x-3 text-gold-accent text-xs tracking-wider">
+                        <span>NPSN: 70024271</span>
+                        <span>•</span>
+                        <span>Akreditasi Kemendikbud</span>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation Links (3 Columns) -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-sm font-bold text-gold-accent uppercase tracking-wider">Menu Cepat</h4>
+                    <ul class="space-y-2 text-xs text-emerald-light">
+                        <li><a href="#beranda" class="hover:text-white transition-colors">Halaman Utama</a></li>
+                        <li><a href="#legalitas" class="hover:text-white transition-colors">Legalitas Resmi</a></li>
+                        <li><a href="#visimisi" class="hover:text-white transition-colors">Visi & Misi</a></li>
+                        <li><a href="#pilar" class="hover:text-white transition-colors">Program Utama</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Legalitas Info Summary (4 Columns) -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="text-sm font-bold text-gold-accent uppercase tracking-wider">Ketetapan Hukum</h4>
+                    <ul class="space-y-2 text-xs text-emerald-light/80">
+                        <li><strong>SK Pendirian:</strong> 421.3/1343/430.9.9/2023</li>
+                        <li><strong>SK Operasional:</strong> 503.421/649/PENDIK/430.9.13/2023</li>
+                        <li><strong>Status Kepemilikan:</strong> Yayasan Pendidikan</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Section -->
+            <div class="mt-12 pt-8 border-t border-emerald-medium/20 text-center flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-emerald-light/60">
+                <p>&copy; 2026 SMP Islam Az-Zahro. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Kebijakan Privasi</a>
+                    <a href="#" class="hover:underline">Syarat Ketentuan</a>
+                    <a href="#" class="hover:underline">Dapodik</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            } else {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+            }
+            lucide.createIcons();
+        });
+
+        // Interactive Study Path Explorer Tabs Switcher
+        function switchTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+            });
+
+            // Remove active style from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-deep', 'text-white', 'shadow-md');
+                btn.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+            });
+
+            // Show target content
+            const activeContent = document.getElementById(`content-${tabName}`);
+            activeContent.classList.remove('hidden');
+            activeContent.classList.add('block');
+
+            // Set active styles to target button
+            const activeBtn = document.getElementById(`btn-${tabName}`);
+            activeBtn.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+            activeBtn.classList.add('bg-emerald-deep', 'text-white', 'shadow-md');
+        }
+
+        // Handle Contact Form Submit Mock Response
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Get form fields
+            const form = document.getElementById('contact-form');
+            const alertBox = document.getElementById('contact-success-alert');
+            
+            // Show custom alert modal/element
+            alertBox.classList.remove('hidden');
+            form.reset();
+
+            // Smooth scroll to alert
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Automatically hide alert after 8 seconds
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 8000);
+        }
+
+        // Change navigation background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-1', 'shadow-lg');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.remove('py-1', 'shadow-lg');
+                nav.classList.add('py-3');
+            }
+        });
+    </script>
+</body>
+</html>

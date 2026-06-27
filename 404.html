@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Dialihkan - Pembaruan Sistem</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/framework7-icons@5.0.0/css/framework7_icons.css">
     <style>
         :root {
-            --primary-color: #1a73e8;
+            /* Perubahan ke Deep Emerald Green */
+            --primary-color: #0f5227; 
+            --primary-hover: #0b3a1c;
+            
+            /* Warna Alert (Oranye/Merah) */
+            --alert-bg: #fff3e0; 
+            --alert-border: #ff9800; 
+            --alert-text: #bf360c; 
+            --alert-icon: #e65100; 
+
             --text-color: #3c4043;
             --bg-color: #f8f9fa;
             --card-bg: #ffffff;
@@ -75,17 +85,18 @@
             background-color: var(--primary-color);
             color: white;
             padding: 14px 28px;
-            border-radius: 24px;
+            /* Mengubah border-radius agar tidak terlalu bulat */
+            border-radius: 8px; 
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
             margin: 10px 0 20px 0;
             transition: background-color 0.2s, transform 0.1s;
-            box-shadow: 0 2px 6px rgba(26, 115, 232, 0.2);
+            box-shadow: 0 2px 6px rgba(15, 82, 39, 0.2);
         }
 
         .btn:hover {
-            background-color: #1557b0;
+            background-color: var(--primary-hover);
         }
 
         .btn:active {
@@ -93,13 +104,31 @@
         }
 
         .note-box {
-            background-color: #e8f0fe;
-            border-left: 4px solid var(--primary-color);
-            padding: 14px;
-            border-radius: 4px;
+            background-color: var(--alert-bg);
+            border-left: 4px solid var(--alert-border);
+            color: var(--alert-text);
+            padding: 16px;
+            border-radius: 8px;
             text-align: left;
             font-size: 13.5px;
             line-height: 1.5;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .alert-icon {
+            color: var(--alert-icon);
+            font-size: 22px;
+            margin-top: -2px;
+            flex-shrink: 0;
+        }
+
+        .alert-content strong {
+            color: var(--alert-text);
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -115,15 +144,17 @@
     <a href="/presensi/" class="btn">Buka & Instal Aplikasi Baru</a>
 
     <div class="note-box">
-        <strong>PENTING SEBELUM INSTAL:</strong><br>
-        1. Klik tombol di atas untuk menuju ke halaman presensi yang baru.<br>
-        2. Tunggu beberapa detik di halaman tersebut sampai muncul perintah/pop-up <strong>"Instal Aplikasi"</strong>.<br>
-        3. Jika aplikasi baru sudah terinstal, mohon <strong>hapus/uninstall aplikasi versi lama</strong> Anda agar tidak bentrok.
+        <i class="f7-icons alert-icon">exclamation_triangle_fill</i>
+        <div class="alert-content">
+            <strong>PENTING SEBELUM INSTAL:</strong>
+            1. Klik tombol di atas untuk menuju ke halaman presensi yang baru.<br>
+            2. Tunggu beberapa detik di halaman tersebut sampai muncul perintah/pop-up <strong>"Instal Aplikasi"</strong>.<br>
+            3. Jika aplikasi baru sudah terinstal, mohon <strong>hapus/uninstall aplikasi versi lama</strong> Anda agar tidak bentrok.
+        </div>
     </div>
 </div>
 
 <script>
-    // Menampilkan log path asal error di console untuk kebutuhan debugging
     const pathSaja = window.location.pathname; 
     console.log("User tersasar dari path:", pathSaja); 
 </script>

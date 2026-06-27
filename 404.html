@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Dialihkan - Pembaruan Sistem</title>
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --text-color: #3c4043;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .illustration {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 24px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1f1f1f;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #5f6368;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            margin: 10px 0 20px 0;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 2px 6px rgba(26, 115, 232, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #1557b0;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .note-box {
+            background-color: #e8f0fe;
+            border-left: 4px solid var(--primary-color);
+            padding: 14px;
+            border-radius: 4px;
+            text-align: left;
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Gambar 404 -->
+    <img src="media/img/404.jpg" alt="Halaman tidak ditemukan / diperbarui" class="illustration">
+    
+    <h1>Pembaruan Sistem & Antarmuka</h1>
+    
+    <p>Halaman ini sedang mengalami <span class="highlight">perbaikan struktur path file</span> dan <span class="highlight">peningkatan tampilan UI (User Interface)</span> agar lebih responsif.</p>
+    
+    <!-- Tombol Manual -->
+    <a href="#" id="redirectLink" class="btn">Buka & Instal Aplikasi Baru</a>
+
+    <div class="note-box">
+        <strong>PENTING SEBELUM INSTAL:</strong><br>
+        1. Klik tombol di atas untuk menuju ke halaman baru.<br>
+        2. Tunggu beberapa detik di halaman tersebut sampai muncul perintah/pop-up <strong>"Instal Aplikasi"</strong>.<br>
+        3. Jika aplikasi baru sudah terinstal, mohon <strong>hapus/uninstall aplikasi versi lama</strong> Anda agar tidak bentrok.
+    </div>
+</div>
+
+<script>
+    // Mengambil path dari URL saat ini
+    const pathSaja = window.location.pathname; 
+    console.log("Path asal:", pathSaja); 
+
+    // Memasukkan path ke dalam atribut href tombol secara dinamis
+    const redirectLinkElement = document.getElementById('redirectLink');
+    redirectLinkElement.href = pathSaja;
+</script>
+
+</body>
+</html>

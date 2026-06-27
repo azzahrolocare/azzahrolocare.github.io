@@ -145,8 +145,18 @@
         .alert-content strong {
             color: var(--alert-text);
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             font-size: 14px;
+        }
+
+        /* CSS untuk Icon Titik Tiga Inline */
+        .inline-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            vertical-align: middle;
+            margin: 0 2px;
         }
     </style>
 </head>
@@ -158,7 +168,7 @@
     <h1>Pembaruan Sistem & Antarmuka</h1>
 
     <div class="apology-text">
-        Kami memohon maaf yang sebesar-besarnya kepada seluruh Bapak/Ibu Guru <span class="school-highlight">SMP Islam Az-Zahro</span> dan <span class="school-highlight">SMK Az-Zahro</span> atas ketidaknyamanan yang terjadi akibat  <span class="school-highlight">Pembaruan Aplikasi Presensi Digital ini.</span>
+        Kami memohon maaf yang sebesar-besarnya kepada seluruh Bapak/Ibu Guru <span class="school-highlight">SMP Islam Az-Zahro</span> dan <span class="school-highlight">SMK Az-Zahro</span> atas ketidaknyamanan yang terjadi akibat <span class="school-highlight">Pembaruan Aplikasi Presensi Digital ini.</span>
     </div>
     
     <h3>PEMBARUAN SELESAI SILAKAN KLIK TOMBOL HIJAU DIBAWAH</h3>
@@ -171,10 +181,10 @@
         </svg>
         
         <div class="alert-content">
-            <strong>PENTING SEBELUM INSTAL:</strong>
-            1. Klik tombol di atas untuk menuju ke halaman presensi yang baru.<br>
-            2. Tunggu beberapa detik di halaman tersebut sampai muncul perintah/pop-up <strong>"Instal Aplikasi"</strong><br>
-            3. Jika aplikasi baru sudah terinstal, mohon <b>hapus/uninstall aplikasi versi lama anda.</b>
+            <strong>PENTING - CARA INSTALASI:</strong>
+            1. Klik tombol hijau di atas untuk menuju ke halaman presensi yang baru.<br>
+            2. Klik ikon <b>titik tiga</b> <svg class="inline-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg> di pojok kanan atas browser Chrome, pilih menu <b>"Tambahkan ke Layar Utama"</b> (Add to Home screen), lalu klik <strong>"Instal"</strong>
+            3. Setelah aplikasi versi baru berhasil terpasang, mohon segera <b>menghapus (uninstall) aplikasi versi lama Anda.</b>
         </div>
     </div>
 </div>
@@ -183,30 +193,14 @@
     const pathSaja = window.location.pathname; 
     console.log("User tersasar dari path:", pathSaja); 
 
-    // --- LOGIKA KHUSUS MEMAKSA KELUAR DARI PWA KE CHROME ORIGINAL ---
+    // --- SCRIPT OTOMATIS BUKA DI CHROME ORIGINAL (ANDROID) ---
     const currentDomain = window.location.hostname;
     const tombolPresensi = document.getElementById('btn-presensi');
 
-    // Cek apakah user menggunakan perangkat Android
+    // Cek apakah user membuka menggunakan perangkat Android
     if (/Android/i.test(navigator.userAgent)) {
-        
-        // Buat format Android Intent khusus untuk Google Chrome target link /presensi/
-        const chromeIntentLink = `intent://${currentDomain}/presensi/#Intent;scheme=https;package=com.android.chrome;end`;
-        
-        // Ubah link pada tombol fisik agar jika diklik langsung melompat ke Chrome
-        tombolPresensi.href = chromeIntentLink;
-
-        // Trik Tambahan: Cek jika halaman ini dibuka di dalam mode PWA terinstal (Standalone)
-        // Jika iya, kita bisa tawarkan auto-redirect atau memastikan fungsi kliknya meremove target blank
-        const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-        
-        if (isStandalone) {
-            console.log("Website dibuka dari dalam aplikasi PWA lama.");
-            
-            // Opsional: Jika Anda ingin begitu guru membuka PWA lama langsung otomatis melempar ke Chrome tanpa klik tombol,
-            // Anda bisa menghapus tanda komentar (//) pada baris di bawah ini:
-            // window.location.href = chromeIntentLink;
-        }
+        // Mengubah link tombol menjadi format Android Intent untuk aplikasi Google Chrome
+        tombolPresensi.href = `intent://${currentDomain}/presensi/#Intent;scheme=https;package=com.android.chrome;end`;
     }
 </script>
 

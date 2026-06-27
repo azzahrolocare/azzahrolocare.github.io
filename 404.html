@@ -157,16 +157,15 @@
     
     <h1>Pembaruan Sistem & Antarmuka</h1>
 
-    <!-- Teks Permohonan Maaf Khusus Guru (DI ATAS) -->
     <div class="apology-text">
         Kami memohon maaf yang sebesar-besarnya kepada seluruh Bapak/Ibu Guru <span class="school-highlight">SMP Islam Az-Zahro</span> dan <span class="school-highlight">SMK Az-Zahro</span> atas ketidaknyamanan yang terjadi akibat  <span class="school-highlight">Pembaruan Aplikasi Presensi Digital ini.</span>
     </div>
     
     <h3>PEMBARUAN SELESAI SILAKAN KLIK TOMBOL HIJAU DIBAWAH</h3>
-    <a href="/presensi/" class="btn">Instal Aplikasi Presensi Digital</a>
+    
+    <a href="/presensi/" id="btn-presensi" class="btn">Instal Aplikasi Presensi Digital</a>
 
     <div class="note-box">
-        <!-- SVG Icon Segitiga Peringatan -->
         <svg class="alert-icon-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
             <path d="M25.105 7.152c1.262-2.133 4.528-2.133 5.79 0l21.266 35.914c1.293 2.184-.316 4.934-2.895 4.934H6.734c-2.58 0-4.188-2.75-2.895-4.934L25.105 7.152zM28 39c1.38 0 2.5-1.12 2.5-2.5S29.38 34 28 34s-2.5 1.12-2.5 2.5S26.62 39 28 39zm-2-7h4V19h-4v13z"/>
         </svg>
@@ -183,6 +182,16 @@
 <script>
     const pathSaja = window.location.pathname; 
     console.log("User tersasar dari path:", pathSaja); 
+
+    // --- SCRIPT OTOMATIS BUKA DI CHROME ORIGINAL (ANDROID) ---
+    const currentDomain = window.location.hostname;
+    const tombolPresensi = document.getElementById('btn-presensi');
+
+    // Cek apakah user membuka menggunakan perangkat Android
+    if (/Android/i.test(navigator.userAgent)) {
+        // Mengubah link tombol menjadi format Android Intent untuk aplikasi Google Chrome
+        tombolPresensi.href = `intent://${currentDomain}/presensi/#Intent;scheme=https;package=com.android.chrome;end`;
+    }
 </script>
 
 </body>

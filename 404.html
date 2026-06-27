@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Dialihkan - Pembaruan Sistem</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/framework7-icons@5.0.0/css/framework7_icons.css">
     <style>
         :root {
             /* Perubahan ke Deep Emerald Green */
@@ -66,13 +65,27 @@
             font-weight: 600;
             margin-bottom: 16px;
             color: #1f1f1f;
+            line-height: 1.3;
         }
 
         p {
             font-size: 15px;
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             color: #5f6368;
+        }
+
+        /* Styling permohonan maaf di bagian atas */
+        .apology-text {
+            font-style: italic;
+            font-size: 14px;
+            color: #d32f2f; /* Warna merah gelap yang sopan untuk perhatian */
+            background-color: #fdf2f2;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            border: 1px dashed #f5b7b7;
         }
 
         .highlight {
@@ -80,17 +93,21 @@
             color: var(--primary-color);
         }
 
+        .school-highlight {
+            font-weight: 700;
+            color: #b71c1c;
+        }
+
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
             color: white;
             padding: 14px 28px;
-            /* Mengubah border-radius agar tidak terlalu bulat */
             border-radius: 8px; 
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
-            margin: 10px 0 20px 0;
+            margin: 10px 0 24px 0;
             transition: background-color 0.2s, transform 0.1s;
             box-shadow: 0 2px 6px rgba(15, 82, 39, 0.2);
         }
@@ -117,11 +134,12 @@
             gap: 12px;
         }
 
-        .alert-icon {
-            color: var(--alert-icon);
-            font-size: 22px;
-            margin-top: -2px;
+        .alert-icon-svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--alert-icon);
             flex-shrink: 0;
+            margin-top: -1px;
         }
 
         .alert-content strong {
@@ -138,13 +156,21 @@
     <img src="/media/img/404.jpg" alt="Halaman tidak ditemukan / diperbarui" class="illustration">
     
     <h1>Pembaruan Sistem & Antarmuka</h1>
+
+    <!-- Teks Permohonan Maaf Khusus Guru (DI ATAS) -->
+    <div class="apology-text">
+        Kami memohon maaf yang sebesar-besarnya kepada seluruh Bapak/Ibu Guru <span class="school-highlight">SMP Islam Az-Zahro</span> dan <span class="school-highlight">SMK Az-Zahro</span> atas ketidaknyamanan yang terjadi akibat  <span class="school-highlight">Pembaruan Aplikasi Presensi Digital ini.</span>
+    </div>
     
-    <p>Halaman ini sedang mengalami <span class="highlight">perbaikan struktur path file</span> dan <span class="highlight">peningkatan tampilan UI (User Interface)</span> agar lebih responsif.</p>
-    
-    <a href="/presensi/" class="btn">Buka & Instal Aplikasi Baru</a>
+    <h3>PEMBARUAN SELESAI SILAKAN KLIK TOMBOL HIJAU DIBAWAH</h3>
+    <a href="/presensi/" class="btn">Instal Aplikasi Presensi Digital</a>
 
     <div class="note-box">
-        <i class="f7-icons alert-icon">exclamation_triangle_fill</i>
+        <!-- SVG Icon Segitiga Peringatan -->
+        <svg class="alert-icon-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.105 7.152c1.262-2.133 4.528-2.133 5.79 0l21.266 35.914c1.293 2.184-.316 4.934-2.895 4.934H6.734c-2.58 0-4.188-2.75-2.895-4.934L25.105 7.152zM28 39c1.38 0 2.5-1.12 2.5-2.5S29.38 34 28 34s-2.5 1.12-2.5 2.5S26.62 39 28 39zm-2-7h4V19h-4v13z"/>
+        </svg>
+        
         <div class="alert-content">
             <strong>PENTING SEBELUM INSTAL:</strong>
             1. Klik tombol di atas untuk menuju ke halaman presensi yang baru.<br>

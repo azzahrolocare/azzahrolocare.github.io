@@ -183,14 +183,30 @@
     const pathSaja = window.location.pathname; 
     console.log("User tersasar dari path:", pathSaja); 
 
-    // --- SCRIPT OTOMATIS BUKA DI CHROME ORIGINAL (ANDROID) ---
+    // --- LOGIKA KHUSUS MEMAKSA KELUAR DARI PWA KE CHROME ORIGINAL ---
     const currentDomain = window.location.hostname;
     const tombolPresensi = document.getElementById('btn-presensi');
 
-    // Cek apakah user membuka menggunakan perangkat Android
+    // Cek apakah user menggunakan perangkat Android
     if (/Android/i.test(navigator.userAgent)) {
-        // Mengubah link tombol menjadi format Android Intent untuk aplikasi Google Chrome
-        tombolPresensi.href = `intent://${currentDomain}/presensi/#Intent;scheme=https;package=com.android.chrome;end`;
+        
+        // Buat format Android Intent khusus untuk Google Chrome target link /presensi/
+        const chromeIntentLink = `intent://${currentDomain}/presensi/#Intent;scheme=https;package=com.android.chrome;end`;
+        
+        // Ubah link pada tombol fisik agar jika diklik langsung melompat ke Chrome
+        tombolPresensi.href = chromeIntentLink;
+
+        // Trik Tambahan: Cek jika halaman ini dibuka di dalam mode PWA terinstal (Standalone)
+        // Jika iya, kita bisa tawarkan auto-redirect atau memastikan fungsi kliknya meremove target blank
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+        
+        if (isStandalone) {
+            console.log("Website dibuka dari dalam aplikasi PWA lama.");
+            
+            // Opsional: Jika Anda ingin begitu guru membuka PWA lama langsung otomatis melempar ke Chrome tanpa klik tombol,
+            // Anda bisa menghapus tanda komentar (//) pada baris di bawah ini:
+            // window.location.href = chromeIntentLink;
+        }
     }
 </script>
 
